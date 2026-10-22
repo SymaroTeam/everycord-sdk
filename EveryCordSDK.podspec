@@ -5,8 +5,11 @@
 #
 #   pod 'EveryCordSDK', :podspec => 'https://raw.githubusercontent.com/SymaroTeam/everycord-sdk/1.0.0/EveryCordSDK.podspec'
 #
-# The binary is the same release zip Swift Package Manager installs. The version and sha256 lines are rewritten for each
-# release.
+# The binary is the same EveryCordSDK.xcframework Swift Package Manager installs, in the release's
+# EveryCordSDK-CocoaPods.zip together with LiveKit's RustLiveKitUniFFI.xcframework (Apache-2.0, license in LICENSES/).
+# LiveKit's WebRTC framework comes from LiveKit's own binary pod. Not LiveKitClient or LiveKitUniFFI: LiveKit's Swift
+# code, the UniFFI bindings included, is already inside EveryCordSDK, and a second copy would define its classes twice.
+# The version and sha256 lines are rewritten for each release (SDK/scripts/build-ios.sh).
 
 Pod::Spec.new do |s|
   s.name              = 'EveryCordSDK'
@@ -25,15 +28,16 @@ Pod::Spec.new do |s|
   }
   s.author            = { 'Symaro, LLC' => 'services@symaro.com' }
   s.source            = {
-    :http => "https://github.com/SymaroTeam/everycord-sdk/releases/download/#{s.version}/EveryCordSDK.xcframework.zip",
-    :sha256 => '8e8bc62918be9c75468608bc453c0c739f9b8f22bec66959c692c451c10161f0'
+    :http => "https://github.com/SymaroTeam/everycord-sdk/releases/download/#{s.version}/EveryCordSDK-CocoaPods.zip",
+    :sha256 => 'ff9e62070efecb5327c0083a3fd43df701fdff933cea8232c14cb707c4b8831c'
   }
 
   s.platform              = :ios, '16.0'
   s.ios.deployment_target = '16.0'
   s.swift_versions        = ['5.9']
-  s.vendored_frameworks   = 'EveryCordSDK.xcframework'
+  s.vendored_frameworks   = 'EveryCordSDK.xcframework', 'RustLiveKitUniFFI.xcframework'
   s.frameworks            = 'ReplayKit', 'AVKit', 'Speech'
 
-  s.dependency 'LiveKitClient'
+  # The WebRTC build the SDK was compiled against (webrtc-xcframework 150.7871.03).
+  s.dependency 'LiveKitWebRTC', '= 150.7871.03'
 end

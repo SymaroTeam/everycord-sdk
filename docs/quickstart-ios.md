@@ -16,7 +16,9 @@ Install the EveryCord SDK, sign a user in, and go live from your app's broadcast
 - An App Group shared by your app and its broadcast upload extension.
 
 The SDK ships as a compiled, signed `EveryCordSDK.xcframework`. LiveKit's two binary frameworks (`LiveKitWebRTC` and
-`RustLiveKitUniFFI`, for co-hosts) come in as their own dependencies and are embedded in your app.
+`RustLiveKitUniFFI`, for co-hosts) come in as their own dependencies and are embedded in your app. Don't add LiveKit's
+own packages or pods (`client-sdk-swift`, `LiveKitClient`, `LiveKitUniFFI`) next to it: LiveKit's Swift code is already
+inside the SDK. If your app uses LiveKit itself, write to services@symaro.com before you integrate.
 
 ## Install with Swift Package Manager
 
@@ -45,7 +47,8 @@ targets: [
 ## Install with CocoaPods
 
 CocoaPods trunk becomes read-only in December 2026, so the EveryCord pod is not on trunk. Use either form below; both
-install the same release zip as Swift Package Manager.
+install the same SDK as Swift Package Manager, from the release's `EveryCordSDK-CocoaPods.zip` (the SDK and LiveKit's
+`RustLiveKitUniFFI.xcframework`), with LiveKit's `LiveKitWebRTC` pod.
 
 **The podspec at a release tag.** Pin the version in the URL:
 
@@ -62,7 +65,7 @@ target 'MyAppBroadcast' do
 end
 ```
 
-**The EveryCord specs repository.** Add it as a source, before the CocoaPods CDN (which still serves `LiveKitClient`):
+**The EveryCord specs repository.** Add it as a source, before the CocoaPods CDN (which still serves `LiveKitWebRTC`):
 
 ```ruby
 source 'https://github.com/SymaroTeam/everycord-specs.git'
@@ -77,6 +80,21 @@ end
 
 target 'MyAppBroadcast' do
   pod 'EveryCordSDK', '~> 1.0'
+end
+```
+
+With either form, add this to the end of the Podfile: LiveKit's `LiveKitWebRTC` pod still declares iOS 13, which
+current Xcode no longer builds, so its deployment target is raised to your app's:
+
+```ruby
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      if config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'].to_f < 16.0
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '16.0'
+      end
+    end
+  end
 end
 ```
 

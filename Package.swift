@@ -17,7 +17,7 @@
 import PackageDescription
 
 let version = "1.0.0"
-let checksum = "8e8bc62918be9c75468608bc453c0c739f9b8f22bec66959c692c451c10161f0"
+let checksum = "ebb72ef599e5995e742f72aabb9a9fe8a14b4fedfeae060a022e76024e11f23a"
 
 let package = Package(
     name: "EveryCordSDK",

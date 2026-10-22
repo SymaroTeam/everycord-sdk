@@ -55,7 +55,8 @@ source 'https://cdn.cocoapods.org/'
 pod 'EveryCordSDK', '~> 1.0'
 ```
 
-Then: [Quickstart for iOS](docs/quickstart-ios.md).
+Either way, add the Podfile's `post_install` hook from the quickstart (it raises LiveKit's `LiveKitWebRTC` pod from
+iOS 13 to 16, which current Xcode needs). Then: [Quickstart for iOS](docs/quickstart-ios.md).
 
 ## Install on Android
 
@@ -76,7 +77,7 @@ Then: [Quickstart for Android](docs/quickstart-android.md).
 |---|---|
 | `docs/` | the documentation, the same as everycord.net/developers |
 | `Package.swift` | the Swift package: the release's `EveryCordSDK.xcframework` and its LiveKit dependencies |
-| `EveryCordSDK.podspec` | the CocoaPods spec for the same release zip |
+| `EveryCordSDK.podspec` | the CocoaPods spec: the same framework, from the release's `EveryCordSDK-CocoaPods.zip` |
 | `ANDROID.md` | Gradle and Maven setup for the Android SDK |
 | `samples/` | sample apps for iOS and Android |
 | `CHANGELOG.md` | releases |
