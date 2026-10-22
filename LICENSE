@@ -1,0 +1,34 @@
+EveryCord SDK License
+
+Copyright (c) 2026 Symaro, LLC. All rights reserved.
+
+The EveryCord SDK for iOS and for Android, including the compiled binaries attached to the releases of this
+repository, the install files, the sample code and the documentation (together, the "SDK"), is proprietary to
+Symaro, LLC and is protected by copyright and other laws.
+
+1. Partner agreement required. You may download, install and use the SDK only under a written EveryCord partner
+   agreement with Symaro, LLC that is in effect, only in the apps that agreement covers, and only as it permits. If
+   you do not have such an agreement, you may read the documentation, but no other right to use the SDK is granted.
+
+2. Restrictions. Except as your partner agreement expressly allows, you may not copy, modify, adapt, translate,
+   reverse engineer, decompile, disassemble or otherwise try to derive the source code of the SDK; remove or alter any
+   branding the SDK draws or any notice in it; sell, rent, sublicense, publish or redistribute the SDK on its own; or
+   use it to build a product that competes with EveryCord.
+
+3. Keys and services. The SDK works only with keys that Symaro, LLC issues for your apps and with EveryCord's servers.
+   Symaro, LLC may revoke keys, pause or end access under your partner agreement.
+
+4. No warranty. The SDK is provided "as is", without warranty of any kind, express or implied, including the
+   warranties of merchantability, fitness for a particular purpose and non-infringement, except as your partner
+   agreement says otherwise.
+
+5. Limitation of liability. To the extent the law allows, Symaro, LLC is not liable for any indirect, incidental,
+   special, consequential or punitive damages, or for lost profits or data, arising from the SDK, except as your
+   partner agreement says otherwise.
+
+6. Third-party software. The SDK uses third-party components (such as LiveKit, libsrt, HaishinKit and RootEncoder)
+   under their own licenses, which are listed with each release.
+
+Where this license and your partner agreement differ, the partner agreement governs.
+
+Questions: services@symaro.com
