@@ -36,7 +36,7 @@ tier).
 
 ## Engage and extras
 
-- [Sparks, video requests and Boosts](sparks.md): viewers support creators, and creators get paid.
+- [Sparks, video requests and Boosts](creator-monetization.md): viewers support creators, and creators get paid.
 - [Drops](drops.md): viewers earn in-game item codes by watching.
 - [Apple Watch and Messages](apple-watch-messages.md): the Apple Watch screen as a capture source, and sharing into
   Messages.

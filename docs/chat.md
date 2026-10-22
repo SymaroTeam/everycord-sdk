@@ -45,7 +45,7 @@ chat.close()
 
 A chat message has the sender, their `role` (`host`, `cohost`, `moderator` or `viewer`), the text and the time. A
 Sparks gift carries its amount, and its caption ends with "Sparks sent via EveryCord" when your tier's branding
-requires it ([Sparks](sparks.md)).
+requires it ([Sparks](creator-monetization.md)).
 
 ## Moderation
 

@@ -223,4 +223,4 @@ The SDK throws `EveryCordError`:
 
 - [Live streaming](live-streaming.md): destinations, bonding and the EveryCord Relay.
 - [Co-hosts and Picture in Picture](cohosts.md)
-- [Sparks, video requests and Boosts](sparks.md)
+- [Sparks, video requests and Boosts](creator-monetization.md)
