@@ -27,7 +27,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        // RootEncoder, which the SDK uses to send RTMP, is published on JitPack.
+        // RootEncoder (RTMP) and LiveKit's audio switch, which the SDK uses, are published on JitPack.
         maven("https://jitpack.io")
         maven("https://maven.pkg.github.com/SymaroTeam/everycord-sdk") {
             credentials {

@@ -37,7 +37,7 @@ EveryCord-powered features.
 ## How the gates work
 
 - `GET /v1/partner/config` returns `tier` and `features` (all 16 keys). The SDK hides what your tier does not include:
-  check `EveryCord.isEnabled(.cohosts)` (iOS) or `EveryCord.isEnabled(Feature.COHOSTS)` (Android) before showing a
+  check `EveryCord.isEnabled(.cohosts)` (iOS) or `EveryCord.isEnabled(EveryCordFeature.COHOSTS)` (Android) before showing a
   feature's UI.
 - The server enforces the tier on every partner request. A request for a feature above your tier answers
   `403 partner_tier` with `error.feature` (the key) and `error.tier` (the tier that includes it).

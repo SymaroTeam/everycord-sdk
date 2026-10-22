@@ -35,7 +35,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        // RootEncoder, which the SDK uses to send RTMP, is published on JitPack.
+        // RootEncoder (RTMP) and LiveKit's audio switch, which the SDK uses, are published on JitPack.
         maven("https://jitpack.io")
         maven("https://maven.pkg.github.com/SymaroTeam/everycord-sdk") {
             credentials {
@@ -85,7 +85,7 @@ class MyApp : Application() {
 what your tier does not include:
 
 ```kotlin
-if (EveryCord.isEnabled(Feature.COHOSTS)) {
+if (EveryCord.isEnabled(EveryCordFeature.COHOSTS)) {
     // Show the co-host button.
 }
 ```
@@ -141,7 +141,7 @@ app never starts the service itself.
 fun observe(session: LiveSession) {
     lifecycleScope.launch { session.state.collect { state -> statusText.text = state.name } }
     lifecycleScope.launch { session.viewerCount.collect { count -> viewersText.text = "$count watching" } }
-    lifecycleScope.launch { session.destinations.collect { outputs -> showOutputs(outputs) } }
+    lifecycleScope.launch { session.outputs.collect { outputs -> showOutputs(outputs) } }
     lifecycleScope.launch { session.events.collect { event -> if (event.isError) showError(event.message) } }
 }
 
