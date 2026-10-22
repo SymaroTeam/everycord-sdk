@@ -5,7 +5,7 @@ JSON (`Content-Type: application/json`), keys are camelCase, timestamps are ISO 
 strings: never parse them.
 
 > **Early access.** The Partner API is in early access and answers `503 unavailable` until EveryCord turns it on for
-> partners. The moderation routes are marked below; their shapes may still change. Write to
+> partners. Write to
 > [services@symaro.com](mailto:services@symaro.com) to join.
 
 ## Authentication
@@ -367,9 +367,9 @@ the purchases the SDK saw with the units the store reported.
 
 `status` is `draft`, `issued`, `paid`, `overdue` or `disputed`. See [Statements and payment terms](earnings.md#statements-and-payment-terms).
 
-## Moderation routes (secret key, early access)
+## Moderation routes (secret key)
 
-Read only, every tier. Reports about your users and your streams (never the reporter's identity or words), restricted
+Read only, every tier, newest first, `cursor` and `limit` (1 to 50). Reports about your users and your streams (never the reporter's identity or words), restricted
 users, EveryCord's moderation actions and your users' chat bans. See [Moderation for partners](moderation.md) for the
 fields.
 
@@ -377,7 +377,7 @@ fields.
 |---|---|
 | `GET /v1/partner/moderation/reports?status=&targetType=&cursor=&limit=` | reports, newest first, with `reason`, `status` and `outcome` |
 | `GET /v1/partner/moderation/restrictions?status=suspended\|banned\|all&cursor=` | your users suspended or banned now, and until when |
-| `GET /v1/partner/moderation/actions?from=&to=&cursor=` | EveryCord's moderation actions on your users and content, at most 92 days per request |
+| `GET /v1/partner/moderation/actions?from=&to=&cursor=` | EveryCord's moderation actions on your users and content, the last 30 days by default, at most 92 per request |
 | `GET /v1/partner/moderation/chat-bans?hostExternalUserId=&cursor=` | bans and timeouts in your users' channels |
 
 ## Tier gates on EveryCord routes

@@ -45,9 +45,9 @@ Send yourself a `test` event at any time with `POST /v1/partner/webhooks/:id/tes
 | `sparks.received` | Sparks are sent in a partner stream | `sendId`, `sessionId`, `appId`, `recipientUserId`, `recipientExternalUserId`, `senderUserId`, `sparks`, `test`, `createdAt` |
 | `user.restricted` | EveryCord suspends or bans a partner user | `userId`, `externalUserId`, `status` (`suspended` or `banned`), `until`, `at` |
 | `test` | you asked for one | `message`, `webhookId` |
-| `report.created` (early access) | someone reports one of your users or something in your streams | the report, as in [Moderation for partners](moderation.md#reports) |
-| `report.resolved` (early access) | EveryCord resolves or dismisses that report | the report |
-| `user.unrestricted` (early access) | a suspension is lifted or ends, or a ban is lifted | `userId`, `externalUserId`, `previousStatus`, `at` |
+| `report.created` | someone reports one of your users or something in your streams | the report, as in [Moderation for partners](moderation.md#reports) |
+| `report.resolved` | EveryCord resolves or dismisses that report | the report |
+| `user.unrestricted` | a suspension is lifted or ends, or a ban is lifted | `userId`, `externalUserId`, `previousStatus`, `at` |
 
 `externalUserId` is your own user ID, or `null` for an EveryCord account your backend did not create. Events other than
 `live.started` are found by a background pass, so they arrive within about 15 seconds.

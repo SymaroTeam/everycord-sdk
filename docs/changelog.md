@@ -16,6 +16,11 @@ the public repository gets each release's binaries as it ships.
 - Usage, live sessions, webhooks (`live.started`, `live.ended`, `clip.created`, `sparks.received`, `user.restricted`,
   `test`) and monthly revenue reports.
 - Tier gates on every EveryCord route used with the partner headers.
+- Earnings: App Store Connect and Google Play connections, EveryCord-powered products, earnings, statements, and the
+  SDK purchase cross-check (`POST /v1/partner/purchases`).
+- [Moderation visibility](moderation.md): reports, restricted users, chat bans and the actions log, with the
+  `report.created`, `report.resolved` and `user.unrestricted` webhooks.
+- The self-serve [partner dashboard](dashboard.md) at everycord.net/partners.
 
 **iOS SDK** (iOS 16 and later)
 
@@ -37,8 +42,5 @@ the public repository gets each release's binaries as it ships.
 
 **Next in early access**
 
-- Earnings: App Store Connect and Google Play connections, statements, and the SDK purchase cross-check.
-- The self-serve [partner dashboard](dashboard.md).
-- [Moderation visibility](moderation.md): reports, restricted users, chat bans and the actions log, with webhooks.
 - Apple Watch capture and Messages sharing helpers.
 - macOS and visionOS slices of the iOS SDK.

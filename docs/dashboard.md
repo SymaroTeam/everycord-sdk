@@ -5,7 +5,7 @@ Sign up, add your apps, prove you own them, connect your store reports and get y
 no waiting for an EveryCord admin.
 
 > **Early access.** The partner dashboard opens with the Partner API. Until then, EveryCord sets up early-access partners
-> by hand: write to [services@symaro.com](mailto:services@symaro.com). The Moderation page is in early access.
+> by hand: write to [services@symaro.com](mailto:services@symaro.com).
 
 ## 1. Sign up
 

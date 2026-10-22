@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
   s.author            = { 'Symaro, LLC' => 'services@symaro.com' }
   s.source            = {
     :http => "https://github.com/SymaroTeam/everycord-sdk/releases/download/#{s.version}/EveryCordSDK.xcframework.zip",
-    :sha256 => 'c854bc01afb21f018d4d6e79f432583625ef7c01ae2e049c46049a90d3b94d0b'
+    :sha256 => '8e8bc62918be9c75468608bc453c0c739f9b8f22bec66959c692c451c10161f0'
   }
 
   s.platform              = :ios, '16.0'
