@@ -45,7 +45,13 @@ reads the monthly earnings reports of this month and last: per SKU and day, unit
 The SDKs watch for purchases of your EveryCord-powered products in your app (StoreKit 2 transaction updates on iOS, Play
 Billing purchase updates on Android) and send each one to `POST /v1/partner/purchases`: product ID, transaction ID,
 price, currency, storefront and time. EveryCord removes duplicates by transaction ID and flags gaps against the store reports.
-The SDK never sees or sends card details or the buyer's Apple Account or Google account.
+The SDK never sees or sends card details or the buyer's Apple Account or Google account, and never finishes or changes
+a transaction. Sandbox and Xcode test purchases are marked and kept apart.
+
+**Consumables on iOS.** A consumable your app finishes right away shows up in StoreKit's purchase history only on iOS 18
+and later, and only with `SKIncludeConsumableInAppPurchaseHistory` set to `YES` in your app's Info.plist. Add it if
+your EveryCord-powered products are consumables; otherwise the SDK sees such a purchase only as it happens. The store
+reports stay the reference either way.
 
 ## Revenue the stores do not report
 

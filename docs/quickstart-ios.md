@@ -9,13 +9,14 @@ Install the EveryCord SDK, sign a user in, and go live from your app's broadcast
 ## Requirements
 
 - iOS 16 or later. Picture in Picture with the camera running in the background needs iOS 18.
-- Xcode 27 or later (the XCFramework is built with Xcode 27).
+- Xcode 27 or later (the XCFramework is built with Xcode 27). In the Simulator the SDK runs on Apple silicon Macs
+  (arm64 only).
 - A publishable key for your app's bundle ID (`ecpk_test_...` while you integrate), from the
   [partner dashboard](dashboard.md).
 - An App Group shared by your app and its broadcast upload extension.
 
-The SDK ships as a compiled, signed `EveryCordSDK.xcframework`. LiveKit (co-hosts) and libsrt (SRT) come in as their own
-dependencies.
+The SDK ships as a compiled, signed `EveryCordSDK.xcframework`. LiveKit's two binary frameworks (`LiveKitWebRTC` and
+`RustLiveKitUniFFI`, for co-hosts) come in as their own dependencies and are embedded in your app.
 
 ## Install with Swift Package Manager
 
